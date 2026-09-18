@@ -4,6 +4,10 @@
 
 DPG IDC Mystery Box Challenge — *Operation Crowd*
 
+📺 **[Interactive setup guide on VibeHub](https://vibehub.microsoft.com/app/yuktabajaj-adohygienesweep)** — a
+walkthrough of everything in [`SETUP.md`](SETUP.md), with a presenter mode for running it
+live and a self-guided mode with checklists.
+
 ---
 
 ## The problem

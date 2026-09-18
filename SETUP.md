@@ -3,6 +3,11 @@
 A step-by-step guide for someone who has never run this before.
 Expect about 15 minutes.
 
+> 📺 **Prefer it interactive?** The same walkthrough is on VibeHub as a
+> [Setup Lab](https://vibehub.microsoft.com/app/yuktabajaj-adohygienesweep) — presenter
+> mode for running it live in front of a room, self-guided mode with checklists and
+> saved progress.
+
 ---
 
 ## What you are setting up
