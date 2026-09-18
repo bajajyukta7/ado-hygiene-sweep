@@ -102,9 +102,9 @@ BY ISSUE TYPE
 ```
 
 **13% flagged, not 90%.** An earlier, uncalibrated version flagged most of the
-backlog — which is the same as flagging nothing, because people mute it. The
-current rule set is deliberately conservative (see below), so every line in the
-report is something a human would agree needs fixing.
+backlog — which is the same as flagging nothing, because nobody can act on a
+wall of noise. The current rule set is deliberately conservative (see below), so
+every line in the report is something a human would agree needs fixing.
 
 Out-of-scope items are excluded before the rules ever run: the sweep only looks
 at the area paths the configured ADO team actually owns, so another crew's
@@ -117,10 +117,11 @@ as `<none>`.
 
 ---
 
-## Why it doesn't get muted
+## Why people act on it
 
-The hard part was never detection — it was trust. A hygiene bot that cries wolf
-is muted within a week, and a muted bot is worse than no bot.
+The hard part was never detection — it was trust. A report only works if the
+person reading it believes every line deserves their time, so the rules are
+tuned to earn that:
 
 - **Grooming rules only fire once work is in flight.** A `New` item in the
   backlog isn't neglected, it's a backlog item.
@@ -135,6 +136,8 @@ is muted within a week, and a muted bot is worse than no bot.
   the run rather than inventing work items.
 - **Only `Assigned To` earns a nudge.** Ownerless items are surfaced to the
   group to be claimed, never blamed on whoever happened to create them.
+- **Every finding ships with its fix.** Each line says what is wrong and what to
+  do about it, so acting on it takes a minute, not a meeting.
 
 ---
 
@@ -153,7 +156,7 @@ is muted within a week, and a muted bot is worse than no bot.
 | `blankAcceptance` | No acceptance criteria | In-flight User Stories / PBIs |
 | `noChildTasks` | No children broken out | In-flight User Stories / PBIs |
 
-**Why the noise calibration matters** — see [Why it doesn't get muted](#why-it-doesnt-get-muted) above. In short: in-flight gating, state-aware fields, and dropping weak signals took the flag rate from ~90% down to 13%.
+**Why the noise calibration matters** — see [Why people act on it](#why-people-act-on-it) above. In short: in-flight gating, state-aware fields, and dropping weak signals took the flag rate from ~90% down to 13%.
 
 Every rule is toggleable in `config/config.json`. Turn off what your team doesn't care about.
 
@@ -229,7 +232,7 @@ Access blocks the Graph token used by `--send`.
 
 ## Safety
 
-Nagging bots get muted, and a muted bot is worse than no bot. The guard rails:
+Every message should feel worth opening. The guard rails that keep it that way:
 
 1. **`dryRun: true` is the default.** Delivery requires an explicit send step.
 2. **Nothing flagged means nothing sent.** No "all clear" spam.
