@@ -6,6 +6,45 @@ DPG IDC Mystery Box Challenge — *Operation Crowd*
 
 ---
 
+## The problem
+
+Manual ADO backlog hygiene bottlenecked behind two people — solved with an AI
+automation that routes each finding to its owner.
+
+---
+
+## The impact
+
+Backlog hygiene is a recurring manual tax. Every two weeks a manager and a team
+lead sit down for an hour and comb the same backlog for missing owners, absent
+due dates, empty descriptions and unestimated tasks — then chase each person
+individually.
+
+| | |
+|---|---|
+| Cadence | 1 hour, every 2 weeks |
+| People in the room | 2 (manager + team lead) |
+| Cycles per year | 26 |
+| **Cost** | **52 hours ≈ 6 working days per team, per year** |
+
+And it scales linearly: every additional team pays the same tax again.
+
+ADO Hygiene Sweep removes that meeting. The review stops being a meeting and
+becomes a message — cleanup happens in parallel, done by the people who own the
+work, with nobody triaging on their behalf.
+
+What it buys back:
+
+- **~6 working days a year, per team**, returned to the manager and lead.
+- **Parallel cleanup** instead of a serial queue — every owner fixes only their
+  own items, at the same time.
+- **No chasing.** Each person is told exactly what is wrong and how to fix it,
+  once per run, in one message.
+- **Nothing falls through.** Ownerless work is surfaced to the team to be
+  claimed rather than quietly rotting in the backlog.
+
+---
+
 ## The mystery, decoded
 
 > **Scenario** — A hundred people are trying to get through a single doorway.
@@ -16,15 +55,15 @@ Here is the same shape in our backlog:
 
 | The metaphor | Our reality |
 |---|---|
-| A hundred people | ~140 open work items in the org, most with a hygiene gap |
-| The single doorway | One lead, manually reviewing all of it before every shiproom |
+| A hundred people | ~140 open work items in the org, every one of them somebody's to fix |
+| The single doorway | A manager and a lead, manually reviewing all of it before every shiproom |
 | Can't widen the doorway | You can't buy more lead-hours, and nobody wants another process meeting |
 
 The instinct is to make the reviewer faster. That's trying to widen the doorway, and it doesn't work — the queue just moves.
 
 **ADO Hygiene Sweep stops routing the crowd through one door.** Every item is delivered straight to the one person who can clear it, in parallel. The reviewer stops being a bottleneck because the queue never forms.
 
-A ado-hygiene-skill doesn't make a doorway wider. It makes the flow through it orderly, continuous, and one-at-a-time-per-person.
+It doesn't make the doorway wider. It makes the flow through it orderly, continuous, and one-at-a-time-per-person.
 
 ---
 
@@ -45,31 +84,57 @@ If nothing is flagged, it sends nothing. Silence is a valid result.
 
 ## Real output
 
-Against a live `Sample Project` backlog, scoped to one manager's org:
+A live, calibrated run against one manager's org:
 
 ```
 ADO HYGIENE SWEEP — <Manager>'s org
-17 Sept 2026, 17:53 IST   [DRY RUN — nothing sent]
+18 Sept 2026, 11:24 IST   [DRY RUN — nothing sent]
 
-  Scanned 140   Flagged 83 (59%)   Clean 57
-  People nudged 8   Ownerless -> group 0
+  Scanned 141   Flagged 18 (13%)   Clean 118
+  People nudged 5   Ownerless -> group 1
 
 BY ISSUE TYPE
-  Unassigned                      47  ██████████████████████
-  No child tasks                  16  ███████
-  Empty description               15  ███████
-  Missing hours                    7  ███
-  Not in a sprint                  4  ██
-  Blank acceptance criteria        2  █
-  Possible duplicate               2  █
+  No due date                     10  ██████████████████████
+  Missing hours                    4  █████████
+  Empty description                3  ███████
+  Blank acceptance criteria        2  ████
+  Unassigned                       1  ██
 ```
 
-254 items were pulled; **114 were correctly excluded** as belonging to another team's area paths.
+**13% flagged, not 90%.** An earlier, uncalibrated version flagged most of the
+backlog — which is the same as flagging nothing, because people mute it. The
+current rule set is deliberately conservative (see below), so every line in the
+report is something a human would agree needs fixing.
+
+Out-of-scope items are excluded before the rules ever run: the sweep only looks
+at the area paths the configured ADO team actually owns, so another crew's
+backlog is never swept or nudged about.
 
 The routine team-chat report uses the four-section template from `SKILL.md`:
 Header, Findings table, Breakdown, Action items. Each work item ID is linked to
 ADO, each owned row tags the owner with a Teams mention, and ownerless items stay
 as `<none>`.
+
+---
+
+## Why it doesn't get muted
+
+The hard part was never detection — it was trust. A hygiene bot that cries wolf
+is muted within a week, and a muted bot is worse than no bot.
+
+- **Grooming rules only fire once work is in flight.** A `New` item in the
+  backlog isn't neglected, it's a backlog item.
+- **Hour fields are state-aware.** Asking for `Completed Work` on a task that
+  hasn't started is noise.
+- **Weak signals ship disabled.** `staleActive` is off: `ChangedDate` moves on
+  any edit, so "untouched" doesn't reliably mean "abandoned".
+- **Cross-team duplicates are treated as intentional.** Two crews tracking the
+  same work under their own area paths is a convention, not a mistake.
+- **Clean runs say nothing at all.** No "all clear" spam.
+- **Findings come only from a live authenticated scan.** A failed query stops
+  the run rather than inventing work items.
+- **Only `Assigned To` earns a nudge.** Ownerless items are surfaced to the
+  group to be claimed, never blamed on whoever happened to create them.
 
 ---
 
@@ -88,11 +153,7 @@ as `<none>`.
 | `blankAcceptance` | No acceptance criteria | In-flight User Stories / PBIs |
 | `noChildTasks` | No children broken out | In-flight User Stories / PBIs |
 
-**Why the noise calibration matters.** The first version flagged 90% of everything, which is the same as flagging nothing — people mute it. Three changes fixed that:
-
-- **In-flight gating.** A `New` item sitting in the backlog isn't "stale", it's a backlog item. Grooming rules only apply once the team has committed to the work.
-- **State-aware fields.** Asking for `Completed Work` on a task that hasn't started is noise. That one change dropped missing-hours findings from 40 to 7.
-- **Dropping weak signals.** `staleActive` ships disabled: `ChangedDate` bumps on *any* field edit, so "untouched for N days" doesn't reliably mean nobody is working on it. A rule you can't trust trains people to ignore the whole digest.
+**Why the noise calibration matters** — see [Why it doesn't get muted](#why-it-doesnt-get-muted) above. In short: in-flight gating, state-aware fields, and dropping weak signals took the flag rate from ~90% down to 13%.
 
 Every rule is toggleable in `config/config.json`. Turn off what your team doesn't care about.
 
