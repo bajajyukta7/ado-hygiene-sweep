@@ -1,0 +1,236 @@
+[
+    {
+        "name":  "Week 27 - 28",
+        "path":  "Sample Project\\Bi-Weekly-IDC\\CY25\\CY25-H2\\CY25-H2-Q3\\Week 27 - 28",
+        "startDate":  "2025-07-02T00:00:00.000Z",
+        "finishDate":  "2025-07-15T00:00:00.000Z"
+    },
+    {
+        "name":  "Week 29 - 30",
+        "path":  "Sample Project\\Bi-Weekly-IDC\\CY25\\CY25-H2\\CY25-H2-Q3\\Week 29 - 30",
+        "startDate":  "2025-07-16T00:00:00.000Z",
+        "finishDate":  "2025-07-29T00:00:00.000Z"
+    },
+    {
+        "name":  "Week 31 - 32",
+        "path":  "Sample Project\\Bi-Weekly-IDC\\CY25\\CY25-H2\\CY25-H2-Q3\\Week 31 - 32",
+        "startDate":  "2025-07-30T00:00:00.000Z",
+        "finishDate":  "2025-08-12T00:00:00.000Z"
+    },
+    {
+        "name":  "Week 33 - 34",
+        "path":  "Sample Project\\Bi-Weekly-IDC\\CY25\\CY25-H2\\CY25-H2-Q3\\Week 33 - 34",
+        "startDate":  "2025-08-13T00:00:00.000Z",
+        "finishDate":  "2025-08-26T00:00:00.000Z"
+    },
+    {
+        "name":  "Week 35 - 36",
+        "path":  "Sample Project\\Bi-Weekly-IDC\\CY25\\CY25-H2\\CY25-H2-Q3\\Week 35 - 36",
+        "startDate":  "2025-08-27T00:00:00.000Z",
+        "finishDate":  "2025-09-09T00:00:00.000Z"
+    },
+    {
+        "name":  "Week 37 - 38",
+        "path":  "Sample Project\\Bi-Weekly-IDC\\CY25\\CY25-H2\\CY25-H2-Q3\\Week 37 - 38",
+        "startDate":  "2025-09-10T00:00:00.000Z",
+        "finishDate":  "2025-09-23T00:00:00.000Z"
+    },
+    {
+        "name":  "Week 39 - 40",
+        "path":  "Sample Project\\Bi-Weekly-IDC\\CY25\\CY25-H2\\CY25-H2-Q3\\Week 39 - 40",
+        "startDate":  "2025-09-24T00:00:00.000Z",
+        "finishDate":  "2025-10-07T00:00:00.000Z"
+    },
+    {
+        "name":  "Week 41 - 42",
+        "path":  "Sample Project\\Bi-Weekly-IDC\\CY25\\CY25-H2\\CY25-H2-Q4\\Week 41 - 42",
+        "startDate":  "2025-10-08T00:00:00.000Z",
+        "finishDate":  "2025-10-21T00:00:00.000Z"
+    },
+    {
+        "name":  "Week 43 - 44",
+        "path":  "Sample Project\\Bi-Weekly-IDC\\CY25\\CY25-H2\\CY25-H2-Q4\\Week 43 - 44",
+        "startDate":  "2025-10-22T00:00:00.000Z",
+        "finishDate":  "2025-11-04T00:00:00.000Z"
+    },
+    {
+        "name":  "Week 45 - 46",
+        "path":  "Sample Project\\Bi-Weekly-IDC\\CY25\\CY25-H2\\CY25-H2-Q4\\Week 45 - 46",
+        "startDate":  "2025-11-05T00:00:00.000Z",
+        "finishDate":  "2025-11-18T00:00:00.000Z"
+    },
+    {
+        "name":  "Week 47 - 48",
+        "path":  "Sample Project\\Bi-Weekly-IDC\\CY25\\CY25-H2\\CY25-H2-Q4\\Week 47 - 48",
+        "startDate":  "2025-11-19T00:00:00.000Z",
+        "finishDate":  "2025-12-02T00:00:00.000Z"
+    },
+    {
+        "name":  "Week 49 - 50",
+        "path":  "Sample Project\\Bi-Weekly-IDC\\CY25\\CY25-H2\\CY25-H2-Q4\\Week 49 - 50",
+        "startDate":  "2025-12-03T00:00:00.000Z",
+        "finishDate":  "2025-12-16T00:00:00.000Z"
+    },
+    {
+        "name":  "Week 51 - 52",
+        "path":  "Sample Project\\Bi-Weekly-IDC\\CY25\\CY25-H2\\CY25-H2-Q4\\Week 51 - 52",
+        "startDate":  "2025-12-17T00:00:00.000Z",
+        "finishDate":  "2025-12-30T00:00:00.000Z"
+    },
+    {
+        "name":  "Week 1 - 2",
+        "path":  "Sample Project\\Bi-Weekly-IDC\\CY26\\CY26-H1\\CY26-H1-Q1\\Week 1 - 2",
+        "startDate":  "2025-12-31T00:00:00.000Z",
+        "finishDate":  "2026-01-13T00:00:00.000Z"
+    },
+    {
+        "name":  "Week 3 - 4",
+        "path":  "Sample Project\\Bi-Weekly-IDC\\CY26\\CY26-H1\\CY26-H1-Q1\\Week 3 - 4",
+        "startDate":  "2026-01-14T00:00:00.000Z",
+        "finishDate":  "2026-01-27T00:00:00.000Z"
+    },
+    {
+        "name":  "Week 5 - 6",
+        "path":  "Sample Project\\Bi-Weekly-IDC\\CY26\\CY26-H1\\CY26-H1-Q1\\Week 5 - 6",
+        "startDate":  "2026-01-28T00:00:00.000Z",
+        "finishDate":  "2026-02-10T00:00:00.000Z"
+    },
+    {
+        "name":  "Week 7 - 8",
+        "path":  "Sample Project\\Bi-Weekly-IDC\\CY26\\CY26-H1\\CY26-H1-Q1\\Week 7 - 8",
+        "startDate":  "2026-02-11T00:00:00.000Z",
+        "finishDate":  "2026-02-24T00:00:00.000Z"
+    },
+    {
+        "name":  "Week 9 - 10",
+        "path":  "Sample Project\\Bi-Weekly-IDC\\CY26\\CY26-H1\\CY26-H1-Q1\\Week 9 - 10",
+        "startDate":  "2026-02-25T00:00:00.000Z",
+        "finishDate":  "2026-03-10T00:00:00.000Z"
+    },
+    {
+        "name":  "Week 11 - 12",
+        "path":  "Sample Project\\Bi-Weekly-IDC\\CY26\\CY26-H1\\CY26-H1-Q1\\Week 11 - 12",
+        "startDate":  "2026-03-11T00:00:00.000Z",
+        "finishDate":  "2026-03-24T00:00:00.000Z"
+    },
+    {
+        "name":  "Week 13 - 14",
+        "path":  "Sample Project\\Bi-Weekly-IDC\\CY26\\CY26-H1\\CY26-H1-Q1\\Week 13 - 14",
+        "startDate":  "2026-03-25T00:00:00.000Z",
+        "finishDate":  "2026-04-07T00:00:00.000Z"
+    },
+    {
+        "name":  "Week 15 - 16",
+        "path":  "Sample Project\\Bi-Weekly-IDC\\CY26\\CY26-H1\\CY26-H1-Q2\\Week 15 - 16",
+        "startDate":  "2026-04-08T00:00:00.000Z",
+        "finishDate":  "2026-04-21T00:00:00.000Z"
+    },
+    {
+        "name":  "Week 17 - 18",
+        "path":  "Sample Project\\Bi-Weekly-IDC\\CY26\\CY26-H1\\CY26-H1-Q2\\Week 17 - 18",
+        "startDate":  "2026-04-22T00:00:00.000Z",
+        "finishDate":  "2026-05-05T00:00:00.000Z"
+    },
+    {
+        "name":  "Week 19 - 20",
+        "path":  "Sample Project\\Bi-Weekly-IDC\\CY26\\CY26-H1\\CY26-H1-Q2\\Week 19 - 20",
+        "startDate":  "2026-05-06T00:00:00.000Z",
+        "finishDate":  "2026-05-19T00:00:00.000Z"
+    },
+    {
+        "name":  "Week 21 - 22",
+        "path":  "Sample Project\\Bi-Weekly-IDC\\CY26\\CY26-H1\\CY26-H1-Q2\\Week 21 - 22",
+        "startDate":  "2026-05-20T00:00:00.000Z",
+        "finishDate":  "2026-06-02T00:00:00.000Z"
+    },
+    {
+        "name":  "Week 23 - 24",
+        "path":  "Sample Project\\Bi-Weekly-IDC\\CY26\\CY26-H1\\CY26-H1-Q2\\Week 23 - 24",
+        "startDate":  "2026-06-03T00:00:00.000Z",
+        "finishDate":  "2026-06-16T00:00:00.000Z"
+    },
+    {
+        "name":  "Week 25 - 26",
+        "path":  "Sample Project\\Bi-Weekly-IDC\\CY26\\CY26-H1\\CY26-H1-Q2\\Week 25 - 26",
+        "startDate":  "2026-06-17T00:00:00.000Z",
+        "finishDate":  "2026-06-30T00:00:00.000Z"
+    },
+    {
+        "name":  "Week 27 - 28",
+        "path":  "Sample Project\\Bi-Weekly-IDC\\CY26\\CY26-H2\\CY26-H2-Q3\\Week 27 - 28",
+        "startDate":  "2026-07-01T00:00:00.000Z",
+        "finishDate":  "2026-07-14T00:00:00.000Z"
+    },
+    {
+        "name":  "Week 29 - 30",
+        "path":  "Sample Project\\Bi-Weekly-IDC\\CY26\\CY26-H2\\CY26-H2-Q3\\Week 29 - 30",
+        "startDate":  "2026-07-15T00:00:00.000Z",
+        "finishDate":  "2026-07-28T00:00:00.000Z"
+    },
+    {
+        "name":  "Week 31 - 32",
+        "path":  "Sample Project\\Bi-Weekly-IDC\\CY26\\CY26-H2\\CY26-H2-Q3\\Week 31 - 32",
+        "startDate":  "2026-07-29T00:00:00.000Z",
+        "finishDate":  "2026-08-11T00:00:00.000Z"
+    },
+    {
+        "name":  "Week 33 - 34",
+        "path":  "Sample Project\\Bi-Weekly-IDC\\CY26\\CY26-H2\\CY26-H2-Q3\\Week 33 - 34",
+        "startDate":  "2026-08-12T00:00:00.000Z",
+        "finishDate":  "2026-08-25T00:00:00.000Z"
+    },
+    {
+        "name":  "Week 35 - 36",
+        "path":  "Sample Project\\Bi-Weekly-IDC\\CY26\\CY26-H2\\CY26-H2-Q3\\Week 35 - 36",
+        "startDate":  "2026-08-26T00:00:00.000Z",
+        "finishDate":  "2026-09-08T00:00:00.000Z"
+    },
+    {
+        "name":  "Week 37 - 38",
+        "path":  "Sample Project\\Bi-Weekly-IDC\\CY26\\CY26-H2\\CY26-H2-Q3\\Week 37 - 38",
+        "startDate":  "2026-09-09T00:00:00.000Z",
+        "finishDate":  "2026-09-22T00:00:00.000Z"
+    },
+    {
+        "name":  "Week 39 - 40",
+        "path":  "Sample Project\\Bi-Weekly-IDC\\CY26\\CY26-H2\\CY26-H2-Q3\\Week 39 - 40",
+        "startDate":  "2026-09-23T00:00:00.000Z",
+        "finishDate":  "2026-10-06T00:00:00.000Z"
+    },
+    {
+        "name":  "Week 41 - 42",
+        "path":  "Sample Project\\Bi-Weekly-IDC\\CY26\\CY26-H2\\CY26-H2-Q4\\Week 41 - 42",
+        "startDate":  "2026-10-07T00:00:00.000Z",
+        "finishDate":  "2026-10-20T00:00:00.000Z"
+    },
+    {
+        "name":  "Week 43 - 44",
+        "path":  "Sample Project\\Bi-Weekly-IDC\\CY26\\CY26-H2\\CY26-H2-Q4\\Week 43 - 44",
+        "startDate":  "2026-10-21T00:00:00.000Z",
+        "finishDate":  "2026-11-03T00:00:00.000Z"
+    },
+    {
+        "name":  "Week 45 - 46",
+        "path":  "Sample Project\\Bi-Weekly-IDC\\CY26\\CY26-H2\\CY26-H2-Q4\\Week 45 - 46",
+        "startDate":  "2026-11-04T00:00:00.000Z",
+        "finishDate":  "2026-11-17T00:00:00.000Z"
+    },
+    {
+        "name":  "Week 47 - 48",
+        "path":  "Sample Project\\Bi-Weekly-IDC\\CY26\\CY26-H2\\CY26-H2-Q4\\Week 47 - 48",
+        "startDate":  "2026-11-18T00:00:00.000Z",
+        "finishDate":  "2026-12-01T00:00:00.000Z"
+    },
+    {
+        "name":  "Week 49 - 50",
+        "path":  "Sample Project\\Bi-Weekly-IDC\\CY26\\CY26-H2\\CY26-H2-Q4\\Week 49 - 50",
+        "startDate":  "2026-12-02T00:00:00.000Z",
+        "finishDate":  "2026-12-15T00:00:00.000Z"
+    },
+    {
+        "name":  "Week 51 - 52",
+        "path":  "Sample Project\\Bi-Weekly-IDC\\CY26\\CY26-H2\\CY26-H2-Q4\\Week 51 - 52",
+        "startDate":  "2026-12-16T00:00:00.000Z",
+        "finishDate":  "2026-12-29T00:00:00.000Z"
+    }
+]

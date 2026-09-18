@@ -1,0 +1,76 @@
+{
+  "$comment": "Turnstile configuration. Everything about WHO and WHAT is scanned lives here. Fill in the FILL-ME values below, then run: node src/index.js",
+
+  "manager": {
+    "displayName": "FILL-ME: Manager Display Name",
+    "email": "FILL-ME: manager@example.com",
+    "$comment": "The manager whose org is swept. Change this and the whole scope moves with it. Must match the display name in Azure DevOps exactly."
+  },
+
+  "azureDevOps": {
+    "organization": "example-org",
+    "project": "Sample Project",
+    "tenantId": "",
+    "$tenantComment": "Leave empty to auto-discover from the organization (recommended — it works for any org, on any machine). Populated automatically after the first successful live run. Only set this by hand if your network blocks the unauthenticated discovery probe.",
+    "team": "FILL-ME: Your ADO Team Name",
+    "$comment": "Scope is resolved dynamically from this team's configured area paths, so it tracks reorgs automatically. Copy the team name exactly as it appears in ADO Project Settings -> Teams.",
+
+    "semester": "auto",
+    "iterationPrefix": "Sample Project\\Bi-Weekly-IDC",
+    "$semesterComment": "Which semester to sweep. 'auto' picks the one containing today's date from the team's iteration list — so it rolls over on its own at H1/H2 boundaries. Override with an explicit value like 'CY26-H2' or a full path when you need to sweep a past or future semester.",
+    "iterationRoot": "Sample Project\\Bi-Weekly-IDC\\CY26\\CY26-H2",
+    "$iterationRootComment": "Resolved from semester at runtime. This value is the cached fallback for offline runs.",
+    "excludeWorkItemTypes": ["Objective"],
+    "closedStates": ["Removed", "Closed", "Completed", "Cut", "Resolved", "Done"],
+
+    "areaPaths": [],
+    "$areaPathsComment": "Leave empty to resolve scope from the ADO team's own area paths (recommended — it follows reorgs). Populate it to override, e.g. [{ \"path\": \"Sample Project\\\\CloudPath\\\\Delivery\", \"includeChildren\": true }]. An override wins over the team lookup.",
+
+    "areaPathsCacheTeam": "",
+    "areaPathsCache": [],
+    "$areaPathsCacheComment": "Last-known scope for your team, refreshed on every live run. Starts empty on a fresh install; the first successful live run populates it. Used for offline/fixture runs so they match production behaviour."
+  },
+
+  "rules": {
+    "noParent":            { "enabled": true,  "exemptTypes": ["Key Result", "Epic"] },
+    "emptyDescription":    { "enabled": true,  "appliesToTypes": ["User Story", "Product Backlog Item"], "minChars": 15, "exemptBuckets": true, "bucketTypes": ["Feature", "Epic", "Key Result"], "$comment": "Only User Stories / PBIs need a written description — that is where the work is actually specified. Features, Epics, OKRs and Tasks are exempt by design." },
+    "missingDueDate":      { "enabled": true,  "appliesToTypes": ["Feature"], "$comment": "A Feature is a commitment, so it needs a Target Date to be trackable." },
+    "missingHours":        { "enabled": true,  "appliesToTypes": ["Task"], "inFlightOnly": true },
+    "unassigned":          { "enabled": true,  "dueSoonDays": 30, "$comment": "Unscheduled backlog does not need an owner. Flagged once the work is in flight, or once its due date is within dueSoonDays." },
+    "duplicateTitle":      { "enabled": true,  "minTitleChars": 12, "sameAreaPathOnly": true, "$comment": "Only flag duplicates within the same area path. Two crews legitimately tracking the same work under their own areas is intentional, not a mistake." },
+    "staleActive":         { "enabled": false, "thresholdDays": 14, "$comment": "Disabled for now — ChangedDate moves on any field edit, so it is a weak signal for real inactivity. Re-enable if the team wants it." },
+    "rootAreaPath":        { "enabled": true },
+    "notInSprint":         { "enabled": true,  "inFlightOnly": true, "appliesToTypes": ["Task", "User Story", "Product Backlog Item"] },
+    "blankAcceptance":     { "enabled": true,  "appliesToTypes": ["User Story", "Product Backlog Item"], "inFlightOnly": true, "minChars": 10 },
+    "noChildTasks":        { "enabled": true,  "appliesToTypes": ["User Story", "Product Backlog Item"], "inFlightOnly": true, "graceDays": 3 }
+  },
+
+  "inFlightStates": ["Active", "Committed", "In Progress"],
+
+  "routing": {
+    "ownerResolutionOrder": ["assignedTo"],
+    "$ownerComment": "Only DM the person actually in Assigned To. Inferring an owner from the parent or creator produces messages that read like an accusation for work that was never theirs. Anything unassigned goes to the group chat, where it can be claimed.",
+    "groupChatName": "FILL-ME: Your Team Group Chat Name",
+    "groupChatId": "",
+    "$groupChatComment": "Teams group chat where ownerless items are posted. Leave groupChatId empty until you have it. To find it, open the chat in Teams on the web and copy the 19:...@thread.v2 value out of the URL.",
+    "summaryRecipient": "FILL-ME: you@example.com",
+    "maxItemsPerMessage": 12,
+
+    "excludePeople": [
+      { "name": "Grace Hopper", "email": "grace.hopper@example.com", "reason": "Example entry - replace or remove. Use this for people outside your org who should never be nudged." }
+    ],
+    "$excludeComment": "People who should never receive a nudge from this sweep. Their items are dropped entirely rather than rerouted to the group, since they belong to another org's process.",
+    "$comment": "Items with no Assigned To owner go to the group chat for claiming. Native --send sends one consolidated DM per assigned owner; Scout/WorkIQ delivery sends one group message and tags every owner."
+  },
+
+  "schedule": {
+    "everyNDays": 3,
+    "timeOfDay": "09:00",
+    "workingDaysOnly": true
+  },
+
+  "safety": {
+    "dryRun": true,
+    "$comment": "dryRun=true writes digests to ./out and sends nothing. Flip to false only after reviewing output."
+  }
+}

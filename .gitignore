@@ -1,0 +1,12 @@
+# Personal configuration — never share. Copy config.sample.json instead.
+config/config.json
+
+# Generated drafts and digests, including real names and work-item titles.
+out/
+
+# Captured work-item snapshots (may contain another team's backlog).
+fixtures/*.json
+!fixtures/iterations.json
+
+node_modules/
+*.bak

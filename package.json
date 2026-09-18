@@ -1,0 +1,16 @@
+{
+  "name": "ado-hygiene-skill",
+  "version": "1.0.0",
+  "description": "ADO hygiene sweep that routes findings to the people who can fix them. DPG IDC Mystery Box — Operation Crowd.",
+  "main": "src/index.js",
+  "bin": { "ado-hygiene-skill": "src/index.js" },
+  "scripts": {
+    "start": "node src/index.js",
+    "send": "node src/index.js --send",
+    "test": "node test/run.js"
+  },
+  "keywords": ["azure-devops", "hygiene", "backlog", "teams", "automation"],
+  "license": "MIT",
+  "private": true,
+  "engines": { "node": ">=18" }
+}
